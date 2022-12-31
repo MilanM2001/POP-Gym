@@ -1,0 +1,51 @@
+﻿<Window x:Class="SR57_2020_POP2021.Windows.ForAttendee.EditWorkoutsAttendee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SR57_2020_POP2021.Windows.ForAttendee"
+        mc:Ignorable="d"
+        Title="EditWorkoutsAttendee" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label Name="lblWorkoutCode" Content="Code" Grid.Row="0" Grid.Column="0"/>
+        <TextBox Name="txtWorkoutCode" Grid.Row="0" Grid.Column="1" Text="{Binding Path=WorkoutCode}"/>
+
+        <Label Name="lblWorkoutStartTime" Content="Start Time" Grid.Row="1" Grid.Column="0"/>
+        <TextBox Name="txtWorkoutStartTime" Grid.Row="1" Grid.Column="1" Text="{Binding Path=WorkoutStartTime}"/>
+
+        <Label Name="lblWorkoutLength" Content="Length(min.)" Grid.Row="2" Grid.Column="0"/>
+        <TextBox Name="txtWorkoutLength" Grid.Row="2" Grid.Column="1" Text="{Binding Path=WorkoutLength}"/>
+
+        <Label Name="lblWorkoutStatus" Content="Status" Grid.Row="3" Grid.Column="0"/>
+        <ComboBox Grid.Column="1" Grid.Row="3" Name="ComboTypeWorkoutStatus" SelectedItem="{Binding Path=WorkoutStatus}"/>
+
+        <Label Name="lblWorkoutDate" Content="Date" Grid.Row="4" Grid.Column="0"/>
+        <DatePicker Name="txtWorkoutDate" Grid.Row="4" Grid.Column="1" SelectedDate="{Binding Path=WorkoutDate}"/>
+
+        <Label Name="lblAppointedInstructor_ID" Content="Appointed Instructor" Grid.Row="5" Grid.Column="0"/>
+        <ComboBox Grid.Column="1" Grid.Row="5" Name="ComboTypeAppointedInstructor" SelectedItem="{Binding Path=AppointedInstructor_ID}"/>
+
+        <Label Name="lblReservedForAttendee_ID" Content="Reserved For Attendee" Grid.Row="6" Grid.Column="0"/>
+        <ComboBox Grid.Column="1" Grid.Row="6" Name="ComboTypeReservedForAttendee" SelectedItem="{Binding Path=ReservedForAttendee_ID}"/>
+
+        <Button Name="btnCancel" Click="btnCancel_Click" Content="Cancel" Grid.Row="7" Grid.Column="0"/>
+        <Button Name="btnOk" Click="btnOk_Click" Content="Ok" Grid.Row="7" Grid.Column="1"/>
+
+    </Grid>
+</Window>

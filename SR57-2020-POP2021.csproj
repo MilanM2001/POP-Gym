@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{70001D07-2C73-4AF0-ABE7-0CA31856F1DB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SR57_2020_POP2021</RootNamespace>
+    <AssemblyName>SR57-2020-POP2021</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Entities\Address.cs" />
+    <Compile Include="Entities\Administrator.cs" />
+    <Compile Include="Entities\Attendee.cs" />
+    <Compile Include="Entities\EStatus.cs" />
+    <Compile Include="Entities\Util.cs" />
+    <Compile Include="Entities\RegisteredUser.cs" />
+    <Compile Include="Entities\Workout.cs" />
+    <Compile Include="Entities\Instructor.cs" />
+    <Compile Include="Entities\FitnessCentre.cs" />
+    <Compile Include="Entities\EWorkoutStatus.cs" />
+    <Compile Include="Entities\ERole.cs" />
+    <Compile Include="Entities\EGender.cs" />
+    <Compile Include="MyExceptions\UserNotFoundException.cs" />
+    <Compile Include="MyExceptions\WorkoutNotFoundException.cs" />
+    <Compile Include="Services\AddressService.cs" />
+    <Compile Include="Services\AdministratorService.cs" />
+    <Compile Include="Services\AttendeeService.cs" />
+    <Compile Include="Services\FitnessCentreService.cs" />
+    <Compile Include="Services\IAddressService.cs" />
+    <Compile Include="Services\IAdministratorService.cs" />
+    <Compile Include="Services\IAttendeeService.cs" />
+    <Compile Include="Services\IFitnessCentreService.cs" />
+    <Compile Include="Services\IInstructorService.cs" />
+    <Compile Include="Services\InstructorService.cs" />
+    <Compile Include="Services\IUserService.cs" />
+    <Compile Include="Services\IWorkoutService.cs" />
+    <Compile Include="Services\UserService.cs" />
+    <Compile Include="Services\WorkoutService.cs" />
+    <Compile Include="Validations\EmailValidation.cs" />
+    <Compile Include="Windows\ForAdministrator\AddEditAddressesWindow.xaml.cs">
+      <DependentUpon>AddEditAddressesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdministrator\AddEditAdministratorsWindow.xaml.cs">
+      <DependentUpon>AddEditAdministratorsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdministrator\AddEditFitnessCentreWindow.xaml.cs">
+      <DependentUpon>AddEditFitnessCentreWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdministrator\AddEditInstructorsWindow.xaml.cs">
+      <DependentUpon>AddEditInstructorsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdministrator\AddEditWorkoutsWindow.xaml.cs">
+      <DependentUpon>AddEditWorkoutsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdministrator\AdministratorEditInfo.xaml.cs">
+      <DependentUpon>AdministratorEditInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdministrator\AdministratorMainWindow.xaml.cs">
+      <DependentUpon>AdministratorMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdministrator\AdministratorShowInfo.xaml.cs">
+      <DependentUpon>AdministratorShowInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdministrator\ShowAddressesWindow.xaml.cs">
+      <DependentUpon>ShowAddressesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdministrator\ShowAdministratorsWindow.xaml.cs">
+      <DependentUpon>ShowAdministratorsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdministrator\ShowFitnessCentreWindow.xaml.cs">
+      <DependentUpon>ShowFitnessCentreWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdministrator\ShowInstructorsWindow.xaml.cs">
+      <DependentUpon>ShowInstructorsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdministrator\ShowRegisteredUsers.xaml.cs">
+      <DependentUpon>ShowRegisteredUsers.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdministrator\ShowWorkoutsWindow.xaml.cs">
+      <DependentUpon>ShowWorkoutsWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdministrator\AddEditAttendeesWindow.xaml.cs">
+      <DependentUpon>AddEditAttendeesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAdministrator\ShowAttendeesWindow.xaml.cs">
+      <DependentUpon>ShowAttendeesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAttendee\AttendeeEditInfo.xaml.cs">
+      <DependentUpon>AttendeeEditInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAttendee\AttendeeMainWindow.xaml.cs">
+      <DependentUpon>AttendeeMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAttendee\AttendeeShowInfo.xaml.cs">
+      <DependentUpon>AttendeeShowInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAttendee\AttendeesWorkouts.xaml.cs">
+      <DependentUpon>AttendeesWorkouts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAttendee\EditWorkoutsAttendee.xaml.cs">
+      <DependentUpon>EditWorkoutsAttendee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForAttendee\InstructorsForAttendee.xaml.cs">
+      <DependentUpon>InstructorsForAttendee.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForInstructor\AddEditWorkoutsInstructor.xaml.cs">
+      <DependentUpon>AddEditWorkoutsInstructor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForInstructor\InstructorEditInfo.xaml.cs">
+      <DependentUpon>InstructorEditInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForInstructor\InstructorMainWindow.xaml.cs">
+      <DependentUpon>InstructorMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForInstructor\InstructorsForInstructor.xaml.cs">
+      <DependentUpon>InstructorsForInstructor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForInstructor\InstructorShowInfo.xaml.cs">
+      <DependentUpon>InstructorShowInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForInstructor\InstructorsWorkouts.xaml.cs">
+      <DependentUpon>InstructorsWorkouts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForUnregistered\InstructorsForUnregistered.xaml.cs">
+      <DependentUpon>InstructorsForUnregistered.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForUnregistered\UnregisteredMainWindow.xaml.cs">
+      <DependentUpon>UnregisteredMainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\ForUnregistered\UnregisteredViewFitnessCentreWindow.xaml.cs">
+      <DependentUpon>UnregisteredViewFitnessCentreWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\HomePageWindow.xaml.cs">
+      <DependentUpon>HomePageWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Windows\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Windows\ForAdministrator\AddEditAddressesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdministrator\AddEditAdministratorsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdministrator\AddEditFitnessCentreWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdministrator\AddEditInstructorsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdministrator\AddEditWorkoutsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdministrator\AdministratorEditInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdministrator\AdministratorMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdministrator\AdministratorShowInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdministrator\ShowAddressesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdministrator\ShowAdministratorsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdministrator\ShowFitnessCentreWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdministrator\ShowInstructorsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdministrator\ShowRegisteredUsers.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdministrator\ShowWorkoutsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdministrator\AddEditAttendeesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAdministrator\ShowAttendeesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAttendee\AttendeeEditInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAttendee\AttendeeMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAttendee\AttendeeShowInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAttendee\AttendeesWorkouts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAttendee\EditWorkoutsAttendee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForAttendee\InstructorsForAttendee.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForInstructor\AddEditWorkoutsInstructor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForInstructor\InstructorEditInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForInstructor\InstructorMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForInstructor\InstructorsForInstructor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForInstructor\InstructorShowInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForInstructor\InstructorsWorkouts.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForUnregistered\InstructorsForUnregistered.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Windows\ForUnregistered\UnregisteredMainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\ForUnregistered\UnregisteredViewFitnessCentreWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\HomePageWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Windows\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

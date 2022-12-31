@@ -1,0 +1,15 @@
+﻿<Window x:Class="SR57_2020_POP2021.Windows.ForUnregistered.UnregisteredViewFitnessCentreWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SR57_2020_POP2021.Windows.ForUnregistered"
+        mc:Ignorable="d"
+        Title="Fitness Centre" Height="518.154" Width="935.373">
+    <Grid RenderTransformOrigin="0.494,0.56">
+        <DataGrid CanUserAddRows="false" Name="DGFitnessCentre" HorizontalAlignment="left" Height="338" VerticalAlignment="Top" Width="773" Margin="92,91,0,0"
+                  AutoGeneratingColumn="DGFitnessCentre_AutoGeneratingColumn"/>
+        <TextBox HorizontalAlignment="Left" Name="txtSearch"  Height="29" Margin="718,43,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="147" PreviewKeyUp="txtSearch_PreviewKeyUp"/>
+        <Button Name="btnExit" Content="Exit" Height="40" Click="btnExit_Click" Margin="10,371,845,57"/>
+    </Grid>
+</Window>

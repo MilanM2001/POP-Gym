@@ -1,0 +1,15 @@
+﻿<Window x:Class="SR57_2020_POP2021.Windows.ForInstructor.InstructorMainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SR57_2020_POP2021.Windows.ForInstructor"
+        mc:Ignorable="d"
+        Height="450" Width="800">
+    <Grid>
+        <Button Name="btnShowInstructorsWorkouts" Content="My Workouts" Click="btnInstructorsWorkouts_Click" Margin="454,159,214,179"/>
+        <Button Name="btnShowPersonalInfo" Content="Show Personal Info" Click="btnShowPersonalInfo_Click" Margin="658,328,10,10"/>
+        <Button Name="btnShowInstructors" Content="Instructors" Click="btnShowInstructors_Click" Margin="179,159,489,179"/>
+        <Button Name="btnLogout" Content="Logout" Click="btnLogout_Click" Margin="18,350,683,23"/>
+    </Grid>
+</Window>
